@@ -1,0 +1,32 @@
+body{
+    background: #E07A5F;
+    
+
+}
+.ingredients{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+#ing{
+    background-color: #E07A5F;
+    display: inline-block ;
+    margin: 10px 10px 10px 10px;
+    height: 100%;
+    fl
+    
+}
+#reci{
+    display: inline-block; 
+    width: 50%;
+    height: 100%;
+    align-items: end; 
+    margin: 10px 10px 10px 10px;
+    
+}
+#img{
+    height: 200px;
+    margin-left: 100px;
+    padding-top: 20px;
+}
