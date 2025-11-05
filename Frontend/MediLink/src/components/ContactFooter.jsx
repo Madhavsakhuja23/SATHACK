@@ -114,10 +114,11 @@ function ContactFooter() {
                   Become part of the MediLink network and transform patient care with AI-powered coordination.
                 </p>
                 <Button
-                  variant="secondary"
-                  className="rounded-full px-6 py-3 hover:scale-105 transition-transform"
+                  className="bg-white border-none rounded-full px-6 py-3 hover:scale-105 transition-transform"
                 >
-                  Partner With Us
+                  <span className="bg-gradient-to-r from-[#00BFA6] to-[#2196F3] bg-clip-text text-transparent">
+                    Partner With Us
+                  </span>
                 </Button>
               </div>
 
