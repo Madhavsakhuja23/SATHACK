@@ -48,13 +48,41 @@ export default function SignupPage() {
 
         <Card className="p-8 shadow-xl">
           <Tabs value={role} onValueChange={setRole} className="mb-6">
-            <TabsList className="grid w-full grid-cols-2">
-              <TabsTrigger value="patient">Patient</TabsTrigger>
-              <TabsTrigger value="hospital">Hospital</TabsTrigger>
-            </TabsList>
+             <TabsList className="grid w-full grid-cols-2 rounded-xl p-1 relative">
+    {['patient', 'hospital'].map((type) => (
+      <TabsTrigger
+        key={type}
+        value={type}
+        className={`relative z-10 rounded-lg py-2.5 px-4 font-medium transition-all duration-300 
+          flex items-center justify-center
+          border border-transparent 
+          focus-visible:outline-none
+          ${role === type
+            ? 'bg-gradient-to-r from-[#00BFA6] to-[#2196F3] text-white shadow-md'
+            : ' text-gray-700 hover:text-[#00BFA6]'
+          }`}
+        style={{
+          height: '42px', // fixes vertical alignment always
+          lineHeight: '1.2rem',
+        }}
+      >
+        <span
+          className={
+            role === type
+              ? ''
+              : 'bg-gradient-to-r from-[#00BFA6] to-[#2196F3] bg-clip-text text-transparent'
+          }
+        >
+          {type === 'patient' ? 'Patient' : 'Hospital'}
+        </span>
+      </TabsTrigger>
+    ))}
+  </TabsList>
+
 
             {/* Patient Signup Form */}
             <TabsContent value="patient">
+              <div className="mt-4" />
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <Label htmlFor="name">Full Name</Label>
@@ -84,6 +112,7 @@ export default function SignupPage() {
 
             {/* Hospital Signup Form */}
             <TabsContent value="hospital">
+              <div className="mt-4" />
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <Label htmlFor="hospitalName">Hospital Name</Label>
@@ -134,7 +163,7 @@ export default function SignupPage() {
 
           <div className="mt-4 p-3 bg-amber-50 rounded-lg border border-amber-200">
             <p className="text-xs text-amber-800">
-              Note: Doctor accounts are created by hospitals after admin verification
+              Note: Doctor accounts are created by hospitals
             </p>
           </div>
         </Card>
