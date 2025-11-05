@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Heart, Link2, Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
+import { NavLink } from 'react-router-dom';
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -60,9 +61,26 @@ function Navbar() {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-3">
+            
+<NavLink
+    to="/login"
+    className={({ isActive }) =>
+      `hover:opacity-80 ${isActive ? "text-[#00BFA6] font-bold" : ""}`
+    }
+  >
+
             <Button variant="ghost" className="hover:opacity-80">
               Login
             </Button>
+            </NavLink>
+            
+<NavLink
+    to="/signup"
+    className={({ isActive }) =>
+      `hover:opacity-80 ${isActive ? "text-[#00BFA6] font-bold" : ""}`
+    }
+  >
+
             <Button
               className="rounded-full shadow-lg transition-transform hover:scale-105"
               style={{
@@ -72,6 +90,7 @@ function Navbar() {
             >
               Sign Up
             </Button>
+            </NavLink>
           </div>
 
           {/* Mobile Menu Button */}

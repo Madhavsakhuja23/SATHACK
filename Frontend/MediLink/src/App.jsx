@@ -5,8 +5,8 @@ import  HowItWorksSection  from './components/HowItWorksSection';
 import  AboutSection  from './components/AboutSection';
 import  ImpactSection  from './components/ImpactSection';
 import  ContactFooter  from './components/ContactFooter';
-// import { LoginPage } from "./components/LoginPage";
-// import { SignupPage } from "./components/SignupPage";
+import LoginPage from "./components/LoginPage";
+import SignupPage from "./components/SignupPage";
 import {createBrowserRouter,RouterProvider} from "react-router-dom"
 
 const Router= createBrowserRouter([
@@ -27,7 +27,7 @@ const Router= createBrowserRouter([
     path: "/login",
     element: (
       <>
-      
+        <Navbar />
         <LoginPage />
       </>
     ),
@@ -37,7 +37,7 @@ const Router= createBrowserRouter([
     path: "/signup",
     element: (
       <>
-       
+        <Navbar />
         <SignupPage />
       </>
     ),
