@@ -22,6 +22,27 @@ const Router= createBrowserRouter([
     <ContactFooter />
     </>
   },
+  
+{
+    path: "/login",
+    element: (
+      <>
+      
+        <LoginPage />
+      </>
+    ),
+  },
+
+{
+    path: "/signup",
+    element: (
+      <>
+       
+        <SignupPage />
+      </>
+    ),
+  },
+
 ])
 
 function App() {

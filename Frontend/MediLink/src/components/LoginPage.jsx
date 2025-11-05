@@ -101,6 +101,8 @@ export default function LoginPage() {
             </Link>
           </div>
 
+
+
           {/* <div className="mt-6 p-4 bg-gradient-to-br from-blue-50 to-teal-50 rounded-lg border border-blue-200">
             <p className="text-xs mb-2 text-gray-900">
               🎯 Try Demo Accounts (Password: <strong>demo</strong>)
