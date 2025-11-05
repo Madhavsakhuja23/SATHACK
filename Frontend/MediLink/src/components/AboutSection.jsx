@@ -104,23 +104,6 @@ function AboutSection() {
               {/* Overlay Gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#00BFA6]/20 to-transparent"></div>
             </div>
-
-            {/* Floating Connection Nodes */}
-            <motion.div
-              className="absolute -top-4 -right-4 w-24 h-24 rounded-2xl bg-gradient-to-br from-[#00BFA6] to-[#2196F3] flex items-center justify-center shadow-2xl"
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 3, repeat: Infinity }}
-            >
-              <Network className="w-12 h-12 text-white" />
-            </motion.div>
-
-            <motion.div
-              className="absolute -bottom-4 -left-4 w-24 h-24 rounded-2xl bg-gradient-to-br from-[#2196F3] to-[#00BFA6] flex items-center justify-center shadow-2xl"
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
-            >
-              <Heart className="w-12 h-12 text-white" fill="white" />
-            </motion.div>
           </motion.div>
         </div>
       </div>
