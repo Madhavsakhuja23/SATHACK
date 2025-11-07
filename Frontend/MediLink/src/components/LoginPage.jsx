@@ -31,6 +31,7 @@ export default function LoginPage() {
 
   if (user) {
     navigate(`/${user.role}-dashboard`);
+
   }
 
   return (
