@@ -1,5 +1,7 @@
 import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
+import "../ui/fix-radix.css";
+// import "./BookAppointment.css";
 import {
   Calendar,
   Clock,
@@ -113,48 +115,99 @@ export function BookAppointment() {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [paymentMethod, setPaymentMethod] = useState(null);
 
-  // Filters
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedSpecialty, setSelectedSpecialty] = useState('all');
-  const [selectedHospital, setSelectedHospital] = useState('all');
-  const [maxFee, setMaxFee] = useState([2500]);
-  const [showFilters, setShowFilters] = useState(false);
+  // // Filters
+  // const [searchQuery, setSearchQuery] = useState('');
+  // const [selectedSpecialty, setSelectedSpecialty] = useState('all');
+  // const [selectedHospital, setSelectedHospital] = useState('all');
+  // const [maxFee, setMaxFee] = useState([2500]);
+  // const [showFilters, setShowFilters] = useState(false);
 
-  // Filtered doctors
-  const filteredDoctors = useMemo(() => {
-    return doctors.filter((doctor) => {
-      const matchesSearch =
-        searchQuery === '' ||
-        doctor.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        doctor.specialty.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        doctor.hospital.toLowerCase().includes(searchQuery.toLowerCase());
+  // // Filtered doctors
+  // const filteredDoctors = useMemo(() => {
+  //   return doctors.filter((doctor) => {
+  //     const matchesSearch =
+  //       searchQuery === '' ||
+  //       doctor.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+  //       doctor.specialty.toLowerCase().includes(searchQuery.toLowerCase()) ||
+  //       doctor.hospital.toLowerCase().includes(searchQuery.toLowerCase());
 
-      const matchesSpecialty =
-        selectedSpecialty === 'all' ||
-        doctor.specialty.toLowerCase() === selectedSpecialty.toLowerCase();
+  //     const matchesSpecialty =
+  //       selectedSpecialty === 'all' ||
+  //       doctor.specialty.toLowerCase() === selectedSpecialty.toLowerCase();
 
-      const matchesHospital =
-        selectedHospital === 'all' || doctor.hospital === selectedHospital;
+  //     const matchesHospital =
+  //       selectedHospital === 'all' || doctor.hospital === selectedHospital;
 
-      const matchesFee = doctor.consultationFee <= maxFee[0];
+  //     const matchesFee = doctor.consultationFee <= maxFee[0];
 
-      return matchesSearch && matchesSpecialty && matchesHospital && matchesFee;
-    });
-  }, [searchQuery, selectedSpecialty, selectedHospital, maxFee]);
+  //     return matchesSearch && matchesSpecialty && matchesHospital && matchesFee;
+  //   });
+  // }, [searchQuery, selectedSpecialty, selectedHospital, maxFee]);
 
-  const activeFiltersCount =
-    (selectedSpecialty !== 'all' ? 1 : 0) +
-    (selectedHospital !== 'all' ? 1 : 0) +
-    (maxFee[0] < 2500 ? 1 : 0);
+  // const activeFiltersCount =
+  //   (selectedSpecialty !== 'all' ? 1 : 0) +
+  //   (selectedHospital !== 'all' ? 1 : 0) +
+  //   (maxFee[0] < 2500 ? 1 : 0);
 
-  const clearFilters = () => {
-    setSelectedSpecialty('all');
-    setSelectedHospital('all');
-    setMaxFee([2500]);
-    setSearchQuery('');
-  };
+  // const clearFilters = () => {
+  //   setSelectedSpecialty('all');
+  //   setSelectedHospital('all');
+  //   setMaxFee([2500]);
+  //   setSearchQuery('');
+  // };
 
-  const selectedDoctorData = doctors.find((d) => d.id === selectedDoctor);
+  // const selectedDoctorData = doctors.find((d) => d.id === selectedDoctor);
+// --- Filters ---
+const [searchQuery, setSearchQuery] = useState('');
+const [selectedSpecialty, setSelectedSpecialty] = useState('all');
+const [selectedHospital, setSelectedHospital] = useState('all');
+const [maxFee, setMaxFee] = useState([2500]);
+const [showFilters, setShowFilters] = useState(false);
+
+// normalize fee for comparison
+const feeLimit = Array.isArray(maxFee) ? maxFee[0] : maxFee;
+
+// --- Filtered Doctors ---
+const filteredDoctors = useMemo(() => {
+  const query = searchQuery.trim().toLowerCase();
+
+  return doctors.filter((doctor) => {
+    const matchesSearch =
+      query === '' ||
+      doctor.name.toLowerCase().includes(query) ||
+      doctor.specialty.toLowerCase().includes(query) ||
+      doctor.hospital.toLowerCase().includes(query);
+
+    const matchesSpecialty =
+      selectedSpecialty === 'all' ||
+      doctor.specialty.toLowerCase() === selectedSpecialty.toLowerCase();
+
+    const matchesHospital =
+      selectedHospital === 'all' ||
+      doctor.hospital.toLowerCase() === selectedHospital.toLowerCase();
+
+    const matchesFee = Number(doctor.consultationFee) <= Number(feeLimit);
+
+    return matchesSearch && matchesSpecialty && matchesHospital && matchesFee;
+  });
+}, [searchQuery, selectedSpecialty, selectedHospital, feeLimit]);
+
+// --- Active filters count ---
+const activeFiltersCount =
+  (selectedSpecialty !== 'all' ? 1 : 0) +
+  (selectedHospital !== 'all' ? 1 : 0) +
+  (feeLimit < 2500 ? 1 : 0);
+
+// --- Clear all filters ---
+const clearFilters = () => {
+  setSelectedSpecialty('all');
+  setSelectedHospital('all');
+  setMaxFee([2500]);
+  setSearchQuery('');
+};
+
+// --- Selected doctor data ---
+const selectedDoctorData = doctors.find((d) => d.id === selectedDoctor);
 
   return (
     <div>
@@ -293,12 +346,57 @@ export function BookAppointment() {
                       <AvatarImage src={doctor.avatar} />
                       <AvatarFallback>{doctor.name.split(' ')[1][0]}</AvatarFallback>
                     </Avatar>
-                    <div className="flex-1">
+                    {/* <div className="flex-1">
                       <h3 className="text-gray-900">{doctor.name}</h3>
                       <p className="text-sm text-gray-600">{doctor.specialty}</p>
                       <p className="text-[#00BFA6] font-medium">₹{doctor.consultationFee}</p>
                     </div>
-                  </div>
+                  </div> */}
+                  <div className="flex-1 min-w-0">
+                        <div className="flex items-start justify-between mb-2">
+                          <div>
+                            <h3 className="text-gray-900 mb-1">{doctor.name}</h3>
+                            <div className="flex items-center gap-2 flex-wrap">
+                              <Badge className="bg-gradient-to-r from-[#00BFA6] to-[#2196F3] text-white border-0">
+                                {doctor.specialty}
+                              </Badge>
+                              <span className="text-sm text-gray-600">{doctor.experience} experience</span>
+                            </div>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <span className="text-yellow-500">⭐</span>
+                            <span className="text-gray-900">{doctor.rating}</span>
+                          </div>
+                        </div>
+
+                        <div className="flex flex-wrap gap-4 text-sm text-gray-600 mb-3">
+                          <div className="flex items-center gap-1">
+                            <MapPin className="w-4 h-4" />
+                            <span>{doctor.hospital}</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Clock className="w-4 h-4" />
+                            <span>Next: {doctor.nextSlot}</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <DollarSign className="w-4 h-4 text-[#00BFA6]" />
+                            <span className="text-[#00BFA6]">₹{doctor.consultationFee}</span>
+                          </div>
+                        </div>
+
+                        <div className="flex items-center gap-2">
+                          {doctor.available ? (
+                            <Badge className="bg-green-100 text-green-700 border-0">
+                              Available Today
+                            </Badge>
+                          ) : (
+                            <Badge variant="outline" className="text-gray-600">
+                              Fully Booked
+                            </Badge>
+                          )}
+                        </div>
+                      </div>
+                    </div>
                 </Card>
               </motion.div>
             ))}
@@ -343,9 +441,34 @@ export function BookAppointment() {
                           {selectedDate ? selectedDate.toLocaleDateString() : 'Pick a date'}
                         </Button>
                       </PopoverTrigger>
-                      <PopoverContent className="w-auto p-0" align="start">
-                        <CalendarComponent mode="single" selected={selectedDate} onSelect={setSelectedDate} />
-                      </PopoverContent>
+                      {/* <PopoverContent className="w-auto p-0" align="start"> */}
+                      {/* <PopoverContent
+  align="start"
+  sideOffset={8}
+  className="w-auto p-2 bg-white border border-gray-200 rounded-xl shadow-lg z-[99999]"
+> */}
+
+                        {/* <CalendarComponent mode="single" selected={selectedDate} onSelect={setSelectedDate} />
+                      </PopoverContent> */}
+                      <PopoverContent
+  align="start"
+  sideOffset={6}
+  className="z-[99999] w-auto rounded-xl border border-gray-200 bg-white p-2 shadow-xl"
+>
+  {/* <CalendarComponent
+    mode="single"
+    selected={selectedDate}
+    onSelect={setSelectedDate}
+  /> */}
+  <Calendar
+  mode="single"
+  selected={selectedDate}
+  onSelect={setSelectedDate}
+  // weekStartsOn={0}
+  // fixedWeeks
+/>
+</PopoverContent>
+
                     </Popover>
                   </div>
 

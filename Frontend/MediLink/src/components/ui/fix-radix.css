@@ -1,0 +1,414 @@
+/* === ✅ Radix Select Dropdown Fix === */
+/* [data-radix-popper-content-wrapper] > div,
+[data-radix-select-content],
+[data-radix-select-viewport],
+[data-radix-select-content] > div {
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+  color: #1e293b !important;
+  font-size: 14px !important;
+  z-index: 9999 !important;
+}
+
+[data-radix-select-item] {
+  padding: 8px 12px !important;
+  cursor: pointer !important;
+  transition: background-color 0.2s ease;
+}
+
+[data-radix-select-item][data-highlighted] {
+  background-color: #f0f9ff !important;
+  color: #0284c7 !important;
+}
+
+
+[data-radix-select-viewport]::-webkit-scrollbar {
+  width: 6px;
+}
+[data-radix-select-viewport]::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 6px;
+}
+
+[data-radix-popper-content-wrapper] .rdp,
+[data-radix-popper-content-wrapper] > div[data-state="open"] {
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+  padding: 10px !important;
+  color: #1e293b !important;
+  z-index: 9999 !important;
+} */
+
+/* .rdp {
+  font-family: "Inter", sans-serif !important;
+  font-size: 14px !important;
+}*/
+
+/* Days & hover */
+/* .rdp-day {
+  border-radius: 8px !important;
+  padding: 6px 0 !important;
+}
+
+.rdp-day:hover {
+  background-color: #e0f7f5 !important;
+  color: #00BFA6 !important;
+} 
+
+.rdp-day_selected {
+  background: linear-gradient(135deg, #00BFA6, #2196F3) !important;
+  color: white !important;
+}*/
+
+/* Header fix */
+/*.rdp-caption_label {
+  color: #0f172a !important;
+  font-weight: 600 !important;
+}
+
+.rdp-nav_button {
+  color: #00BFA6 !important;
+} */
+/* === ✅ Calendar Alignment + Styling Fix === */
+/* .rdp {
+  font-family: "Inter", sans-serif !important;
+  font-size: 14px !important;
+  text-align: center !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+
+.rdp-months {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.rdp-month {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff !important;
+}
+
+.rdp-caption {
+  text-align: center !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.rdp-table {
+  width: 100%;
+  border-collapse: separate !important;
+  border-spacing: 8px !important;
+  table-layout: fixed !important;
+}
+
+
+.rdp-head_row {
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center !important;
+  color: #334155 !important;
+  font-weight: 600 !important;
+}
+
+
+.rdp-row {
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+
+
+.rdp-day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px !important;
+  transition: all 0.2s ease;
+}
+
+.rdp-day:hover {
+  background-color: #e0f7f5 !important;
+  color: #00BFA6 !important;
+}
+
+
+.rdp-day_selected {
+  background: linear-gradient(135deg, #00BFA6, #2196F3) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  box-shadow: 0 0 6px rgba(0, 191, 166, 0.4);
+}
+
+
+.rdp-day_disabled {
+  color: #cbd5e1 !important;
+  cursor: not-allowed !important;
+}
+
+
+.rdp-nav_button {
+  color: #00BFA6 !important;
+  background: transparent !important;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.rdp-nav_button:hover {
+  background-color: #e0f7f5 !important;
+}
+
+.rdp-caption_label {
+  color: #0f172a !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.3px;
+}
+
+
+[data-radix-popper-content-wrapper] {
+  z-index: 9999 !important;
+}*/
+
+/* === ✅ Radix Select Dropdown Fix === */
+[data-radix-popper-content-wrapper] > div,
+[data-radix-select-content],
+[data-radix-select-viewport],
+[data-radix-select-content] > div {
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+  color: #1e293b !important;
+  font-size: 14px !important;
+  z-index: 9999 !important;
+}
+
+[data-radix-select-item] {
+  padding: 8px 12px !important;
+  cursor: pointer !important;
+  transition: background-color 0.2s ease;
+}
+
+[data-radix-select-item][data-highlighted] {
+  background-color: #f0f9ff !important;
+  color: #0284c7 !important;
+}
+
+/* ✅ Scrollbar for long dropdowns */
+[data-radix-select-viewport]::-webkit-scrollbar {
+  width: 6px;
+}
+[data-radix-select-viewport]::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 6px;
+}
+
+/* === ✅ Calendar (Popover) Container Fix === */
+[data-radix-popper-content-wrapper] .rdp,
+[data-radix-popper-content-wrapper] > div[data-state="open"] {
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+  padding: 10px !important;
+  color: #1e293b !important;
+  z-index: 9999 !important;
+}
+
+/* === ✅ Calendar Alignment + Styling Fix === */
+.rdp {
+  font-family: "Inter", sans-serif !important;
+  font-size: 14px !important;
+  text-align: center !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+
+.rdp-months {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.rdp-month {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff !important;
+  border-radius: 12px !important;
+  padding: 8px;
+}
+
+/* === Month Header (Month name + arrows) === */
+.rdp-caption {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px !important;
+}
+
+.rdp-caption_label {
+  color: #0f172a !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  letter-spacing: 0.3px;
+}
+
+/* Reposition navigation arrows */
+.rdp-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 12px;
+}
+
+.rdp-nav_button {
+  color: #00bfa6 !important;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer;
+  border-radius: 8px !important;
+  padding: 4px !important;
+  transition: background 0.2s ease;
+}
+
+.rdp-nav_button:hover {
+  background-color: #e0f7f5 !important;
+}
+
+/* Weekday header row */
+.rdp-head_row {
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center !important;
+  color: #334155 !important;
+  font-weight: 600 !important;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Date rows */
+.rdp-row {
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr);
+  justify-items: center;
+  align-items: center;
+  margin-top: 4px;
+}
+
+/* Individual day cells */
+.rdp-day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px !important;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.rdp-day:hover {
+  background-color: #e0f7f5 !important;
+  color: #00bfa6 !important;
+}
+
+.rdp-day_selected {
+  background: linear-gradient(135deg, #00bfa6, #2196f3) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  box-shadow: 0 0 6px rgba(0, 191, 166, 0.4);
+}
+
+/* Disabled days */
+.rdp-day_disabled {
+  color: #cbd5e1 !important;
+  cursor: not-allowed !important;
+}
+
+/* === ✅ Z-Index / Popover Fix (Global) === */
+[data-radix-popper-content-wrapper],
+[data-radix-select-content],
+[data-radix-popper-content-wrapper] > div[data-state="open"] {
+  z-index: 9999 !important;
+  position: relative !important;
+}
+
+[data-radix-select-content],
+[data-radix-popper-content-wrapper] .rdp {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Ensure popovers never hide behind chat or footer */
+[data-radix-popper-content-wrapper] {
+  z-index: 999999 !important;
+  isolation: isolate !important;
+}
+
+
+/* === ✅ Popover + Calendar Fix — FINAL === */
+
+/* Let Radix handle its own positioning */
+[data-radix-popper-content-wrapper] {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 99999 !important;
+  pointer-events: auto !important;
+  isolation: isolate !important;
+}
+
+/* Popover content box (calendar container) */
+[data-radix-popper-content-wrapper] .rdp,
+[data-radix-popper-content-wrapper] > div[data-state="open"] {
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+  padding: 12px !important;
+  color: #1e293b !important;
+}
+
+/* Make sure button click works even above motion containers */
+button[data-state="open"],
+[data-radix-popper-content-wrapper] {
+  pointer-events: auto !important;
+}
+
+/* z-index override for all popovers (so it’s always above footer/chatbot) */
+[data-radix-popper-content-wrapper],
+[data-radix-select-content] {
+  z-index: 999999 !important;
+}
+
+/* Optional: smooth open animation */
+[data-radix-popper-content-wrapper][data-state="open"] {
+  animation: fadeInScale 0.2s ease-out forwards;
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
