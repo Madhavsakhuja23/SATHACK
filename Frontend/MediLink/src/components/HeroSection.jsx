@@ -72,26 +72,30 @@ function HeroSection() {
           >
             <Button
               size="lg"
-              className="rounded-full px-8 py-6 text-lg shadow-2xl transition-transform hover:scale-105"
-              style={{
-                background: 'linear-gradient(135deg, #00BFA6 0%, #2196F3 100%)',
-                color: 'white',
-              }}
+              className="
+      rounded-full px-8 py-6 text-lg shadow-2xl
+      bg-gradient-to-r from-primary to-secondary
+      text-primary-foreground
+      transition-transform hover:scale-105
+    "
             >
               Book Appointment
             </Button>
+
             <Button
               size="lg"
               variant="outline"
-              className="rounded-full px-8 py-6 text-lg border-2 transition-all hover:scale-105"
-              style={{
-                borderColor: '#00BFA6',
-                color: '#00BFA6',
-              }}
+              className="
+      rounded-full px-8 py-6 text-lg border-2
+      text-primary border-primary
+      transition-all hover:scale-105
+      hover:bg-primary hover:text-primary-foreground
+    "
             >
               Emergency Help
             </Button>
           </motion.div>
+
 
           {/* Feature Highlights */}
           <motion.div

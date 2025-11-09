@@ -1,3 +1,152 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 210 24% 16%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 24% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 24% 16%;
+
+    --primary: 174 100% 37%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 207 90% 54%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 210 10% 45%;
+
+    --accent: 174 65% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 174 100% 37%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 210 24% 16%;
+    --sidebar-primary: 174 100% 37%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 174 60% 96%;
+    --sidebar-accent-foreground: 174 100% 37%;
+    --sidebar-border: 210 20% 92%;
+    --sidebar-ring: 174 100% 37%;
+
+    --success: 142 76% 36%;
+    --warning: 38 92% 50%;
+    --info: 207 90% 54%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(174 100% 37%), hsl(207 90% 54%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 20% 98%));
+
+    --shadow-sm: 0 2px 8px hsl(174 100% 37% / 0.08);
+    --shadow-md: 0 4px 16px hsl(174 100% 37% / 0.12);
+    --shadow-lg: 0 8px 24px hsl(174 100% 37% / 0.16);
+
+    --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 210 40% 8%;
+    --foreground: 210 20% 96%;
+
+    --card: 210 35% 10%;
+    --card-foreground: 210 20% 96%;
+
+    --popover: 210 35% 10%;
+    --popover-foreground: 210 20% 96%;
+
+    --primary: 174 100% 37%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 207 90% 54%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 30% 15%;
+    --muted-foreground: 210 15% 60%;
+
+    --accent: 174 65% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 30% 18%;
+    --input: 210 30% 18%;
+    --ring: 174 100% 37%;
+
+    --sidebar-background: 210 40% 7%;
+    --sidebar-foreground: 210 20% 96%;
+    --sidebar-primary: 174 100% 37%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 35% 12%;
+    --sidebar-accent-foreground: 174 100% 37%;
+    --sidebar-border: 210 30% 15%;
+    --sidebar-ring: 174 100% 37%;
+  }
+}
+
+/* -------------------------
+   ✅ BASE STYLES (shadcn correct)
+   ------------------------- */
+@layer base {
+  /* 
+    ⚠️ IMPORTANT:
+    Only set border color, not border width!
+    This fixes your entire app.
+  */
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+/* -------------------------
+   ✅ UTILITIES
+   ------------------------- */
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .shadow-glow {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.2);
+  }
+
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.3s ease-out;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}

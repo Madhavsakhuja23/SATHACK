@@ -48,7 +48,7 @@ export default function SignupPage() {
 
         <Card className="p-8 shadow-xl">
           <Tabs value={role} onValueChange={setRole} className="mb-6">
-             <TabsList className="grid w-full grid-cols-2 rounded-xl p-1 relative">
+             <TabsList className="grid w-full grid-cols-2 rounded-xl bg-transparent relative">
     {['patient', 'hospital'].map((type) => (
       <TabsTrigger
         key={type}
