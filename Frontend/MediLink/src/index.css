@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* -------------------------
+   ✅ CSS VARIABLES (merged)
+   ------------------------- */
 @layer base {
   :root {
     --background: 210 20% 98%;
@@ -98,14 +101,9 @@
 }
 
 /* -------------------------
-   ✅ BASE STYLES (shadcn correct)
+   ✅ BASE STYLES
    ------------------------- */
 @layer base {
-  /* 
-    ⚠️ IMPORTANT:
-    Only set border color, not border width!
-    This fixes your entire app.
-  */
   * {
     border-color: hsl(var(--border));
   }
